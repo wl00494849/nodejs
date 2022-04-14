@@ -1,9 +1,8 @@
-var myLogTest = require('./module/Log.js')
-var http = require('http')
-var server = http.createServer(function (req,res) {
-    if (req.url == '/hellow') {
-        myLogTest.hellow(res)
-    }
+let express = require('express')
+let http = require('http')
+let app = express()
+app.get('/hellow',function (req,res) {
+    res.send("<html><body>Hellow World</body></html>");
 })
-server.listen(8080)
-console.log('server success')
+app.listen(8080)
+console.log("success")
