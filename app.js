@@ -1,8 +1,12 @@
-let express = require('express')
-let http = require('http')
+let express = require('express');
 let app = express()
-app.get('/hellow',function (req,res) {
-    res.send("<html><body>Hellow World</body></html>");
+var port = "8080"
+
+app.get('/hellow',(req,res)=>{
+    var msg = "Welcome Nodejs Server"
+    res.send(`<html><body>${msg}</body></html>`);
 })
-app.listen(8080)
-console.log("success")
+app.listen(port,()=>{
+    console.log(`app start on port:${port}`)
+})
+
